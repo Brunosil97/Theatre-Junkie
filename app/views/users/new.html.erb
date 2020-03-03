@@ -1,15 +1,25 @@
-<%= form_for @user do |f| %>
+<h1>Sign Up</h1>
+
+<div align='right'>
+<%= link_to(controller: 'sessions', action: 'new') { 'Login' } %>
+</div>
+
+<%flash.each do |name, msg|%>
+<div class: alert alert-<%= name%>> <%=msg%> </div>
+<%end%>
+
+<%= form_for @user, controller: 'users', action: 'create' do |f| %>
   <%= f.label :name %>
-  <%= f.text_field :name %>
+  <%= f.text_field :name %> </p>
 
   <%= f.label :email %>
-  <%= f.email_field :email %>
+  <%= f.email_field :email %><div>
 
   <%= f.label :password %>
-  <%= f.password_field :password %>
+  <%= f.password_field :password %> <div>
 
   <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+  <%= f.password_field :password_confirmation %> <div>
 
   <%= f.submit "create" %>
 <% end %>
