@@ -4,7 +4,7 @@ require 'json'
 
 class Event  
 
-    # attr_accessor :shows
+    
     
     
 end 
