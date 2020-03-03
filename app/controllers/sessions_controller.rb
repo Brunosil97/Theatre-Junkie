@@ -13,7 +13,7 @@ class SessionsController < ApplicationController
 
     @user = user
 
-    redirect_to controller: 'events', action: 'show'
+    redirect_to "/events/show"
     end
 
     def destroy

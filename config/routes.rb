@@ -3,7 +3,9 @@ Rails.application.routes.draw do
   resources :users
   resources :bookings 
   resources :performances 
-  resources :sessions
+  get '/login' => 'sessions#new'
+  post '/login' => 'sessions#create'
+  post '/logout' => 'sessions#destroy'
   resources :events
   resources :theatres
 end
