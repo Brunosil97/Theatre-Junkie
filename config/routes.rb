@@ -5,4 +5,5 @@ Rails.application.routes.draw do
   resources :performances 
   resources :sessions
   resources :events
+  resources :theatres
 end
