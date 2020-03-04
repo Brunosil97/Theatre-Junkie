@@ -1,4 +1,5 @@
-
+require "uri"
+require "net/http"
 module ApiHelper 
     class Api
         def self.events_api
@@ -13,8 +14,8 @@ module ApiHelper
             request["Api-Key"] = "u3bu7u7mb1qs8oan07mwcdft"
 
             response = https.request(request)
-            @shows = JSON.parse(response.read_body)
-            @shows = @shows['Events']
+            events = JSON.parse(response.read_body)
+            events['Events']
         end
 
 
@@ -27,8 +28,8 @@ module ApiHelper
             request["Content-Type"] = "application/json"
             request["Api-Key"] = "u3bu7u7mb1qs8oan07mwcdft"
             response = https.request(request)
-            @perform = JSON.parse(response.read_body)
-            @perform = @perform['Performances']
+            perform = JSON.parse(response.read_body)
+            perform['Performances']
         end
 
         def self.venue_api
@@ -43,8 +44,8 @@ module ApiHelper
             request["Api-Key"] = "u3bu7u7mb1qs8oan07mwcdft"
     
             response = https.request(request)
-            @theatres = JSON.parse(response.read_body)
-            @theatres = @theatres['Venues']
+            theatres = JSON.parse(response.read_body)
+            theatres['Venues']
         end 
     end
 

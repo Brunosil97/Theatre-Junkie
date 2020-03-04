@@ -6,7 +6,6 @@ class EventsController < ApplicationController
 
     def show
         @shows = ApiHelper::Api.events_api
-        @show = @shows.find{|show| show['EventId'] == params[:id].to_i}
-        
+        @show = @shows.find{|show| show['EventId'] == params[:id].to_i} 
     end
 end
