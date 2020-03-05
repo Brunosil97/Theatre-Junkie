@@ -1,11 +1,13 @@
 <h1>Theatre Junkie</h1> 
 
-<%=link_to "logout", logout_path, method: :post%>
+
 <h2>Welcome to Theatre Junkie!</h2>
 <h3>Most featured shows:</h3>
-    <% 10.times do |i| %>
-        <div class="container">
-        Name: <%= @shows[i]['Name']%><br>
-        <%= link_to image_tag("#{@shows[i]['SmallImageUrl']}"), event_path(@shows[i]['EventId']) %>
+    <% 100.times do |i| %>
+    <div class="row"></div>
+        <div class="column">
+            <h3><%= @shows[i]['Name']%><br></h3>
+            <%= link_to image_tag("#{@shows[i]['SmallImageUrl']}"), event_path(@shows[i]['EventId']) %>
         </div>
+    </div>
     <% end %>

@@ -11,7 +11,7 @@ class BookingsController < ApplicationController
     def new 
         @booking = Booking.new
         @performances = Performance.all 
-        byebug
+        @users = User.all
     end 
 
     def create 
@@ -28,6 +28,6 @@ class BookingsController < ApplicationController
     private 
 
     def booking_params
-        params.require(:booking).permit(:user_id, :performance_id, :seating_type, :num_of_tickets)
+        params.require(:booking).permit(:performance_id, :seating_type, :num_of_tickets)
     end 
 end
