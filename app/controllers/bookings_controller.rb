@@ -9,14 +9,11 @@ class BookingsController < ApplicationController
     end 
 
     def new
-        byebug
         @booking = Booking.new
-        @performances = Performance.all 
-        @users = User.all
     end 
 
     def create 
-        @booking = Booking.create(booking_params)
+        @booking = Booking.new
     end
 
     def destroy
