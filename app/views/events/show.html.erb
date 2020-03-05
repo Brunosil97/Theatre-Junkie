@@ -2,7 +2,7 @@
 <h1><%= @show['Name'] %></h1>
 <img src= "<%= @show['SmallImageUrl'] %>" alt= <%= @show['Name']%> >
 <div class="event__text__wrap">
-  <p><%= Nokogiri::HTML.parse(@show['Description'])%></p>
+  <p><%= Nokogiri::HTML.parse(@show['Description']).inner_text%></p>
 </div>
 <h3><%= @show['RunningTime'] %></h3>
 <h3><%= @show['TagLine'] %></h3>

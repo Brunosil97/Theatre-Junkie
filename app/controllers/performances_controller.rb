@@ -2,7 +2,6 @@ class PerformancesController < ApplicationController
 
     def date
         @performances = ApiHelper::Api.performance_api(params[:data].to_i)
-        @performance = Performance.new
         @performance_dates =  Performance.get_date(@performances)
     end
 
@@ -14,7 +13,7 @@ class PerformancesController < ApplicationController
 
     def time
         @performances = ApiHelper::Api.performance_api(params[:show_id].to_i)
-        @performance = Performance.new
+        @performance_time = Performance.get_time(@performances, params[:date])
     end
 
     def time_create

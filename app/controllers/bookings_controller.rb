@@ -8,7 +8,8 @@ class BookingsController < ApplicationController
         @booking = Booking.find(params[:id])
     end 
 
-    def new 
+    def new
+        byebug
         @booking = Booking.new
         @performances = Performance.all 
         @users = User.all

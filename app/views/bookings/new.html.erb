@@ -1,11 +1,8 @@
 <h1>Choose from available performances</h1>
 
 <%= form_for @booking do |f| %>
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, @users, :id, :name %>
-
-    <%= f.label :performance_id %>
-    <%= f.collection_select :performance_id, @performances, :id, :name %>
+    <%= f.hidden_field :user_id, @user, :id %>
+    <%= f.hidden_field :performance_id, params[:performance_id].to_i %>
 
     <%= f.label :seating_type %>
     <%= f.collection_select :seating_type, ["Stalls", "Upper", "Lower"], :to_s, :to_s%>

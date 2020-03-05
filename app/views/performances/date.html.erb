@@ -1,7 +1,7 @@
 <%=form_tag'/performances/date' do %>
 <%= hidden_field_tag "performance[show_id]", params[:data] %>
 <select name="performance[date]">
-    <% Performance.get_date(@performances).each do |date| %>
+    <% @performance_dates.each do |date| %>
         <option value="<%= date.to_s %>"><%= date.to_s %></option>
     <% end %>
 </select>
