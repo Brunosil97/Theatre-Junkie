@@ -19,8 +19,8 @@ module ApiHelper
         end
 
 
-        def self.performance_api(event_id, event_date)
-            base_uri = "https://api.londontheatredirect.com/rest/v2/Events/#{event_id}/Performances?dateFrom=#{event_date}"
+        def self.performance_api(event_id)
+            base_uri = "https://api.londontheatredirect.com/rest/v2/Events/#{event_id}/Performances"
             url = URI(base_uri)
             https = Net::HTTP.new(url.host, url.port);
             https.use_ssl = true

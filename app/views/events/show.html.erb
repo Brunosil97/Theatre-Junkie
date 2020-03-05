@@ -8,4 +8,4 @@
 
 
 
-<button type="button" class="btn btn-link">Book Tickets</button>
+<button type="button" class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Book Tickets", {controller: :performances, action: :date, :data => @show['EventId']} %></button>
