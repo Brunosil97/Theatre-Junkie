@@ -1,6 +1,5 @@
 class PerformancesController < ApplicationController
 
-    
     def date
         @performances = ApiHelper::Api.performance_api(params[:data].to_i)
         @performance = Performance.new
@@ -11,6 +10,7 @@ class PerformancesController < ApplicationController
         # byebug
         redirect_to(performance_time_path({:date => params[:performance][:date], :show_id => params[:performance][:show_id]}))
     end
+
 
     def time
         @performances = ApiHelper::Api.performance_api(params[:show_id].to_i)

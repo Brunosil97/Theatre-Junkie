@@ -1,0 +1,19 @@
+<h1>Choose from available performances</h1>
+
+<%= form_for @booking do |f| %>
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, @users, :id, :name %>
+
+    <%= f.label :performance_id %>
+    <%= f.collection_select :performance_id, @performances, :id, :name %>
+
+    <%= f.label :seating_type %>
+    <%= f.collection_select :seating_type, ["Stalls", "Upper", "Lower"], :to_s, :to_s%>
+
+    <%= f.label :num_of_tickets %>
+    <%= f.number_field :num_of_tickets %>
+
+    <%= f.label :total_price %>
+    
+    <%= f.submit %>
+<% end %>
