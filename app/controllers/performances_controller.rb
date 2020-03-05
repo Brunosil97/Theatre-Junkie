@@ -27,6 +27,7 @@ class PerformancesController < ApplicationController
             performance[:upper_available] = 30
             performance[:event_id] = params[:performance][:show_id].to_i
             performance[:min_price] = performance_time["MinimumTicketPrice"].ceil
+            performance.save
         end
         redirect_to(new_booking_path({:performance_id => performance[:id]}))
     end
