@@ -27,3 +27,34 @@
     clear: both;
     display: table;
   }
+
+  img {
+    border: 1px solid #ddd;
+    border-radius: 7px;
+    padding: 5px;
+    width: 300px;
+  }
+  
+  img:hover {
+    box-shadow: 0 0 2px 1px rgba(0, 140, 186, 1);
+  }
+
+    /* Header/Logo Title */
+    .header {
+        padding: 60px;
+        text-align: center;
+        background: #1abc9c;
+        color: white;
+        font-size: 30px;
+    }
+
+    .title {
+        color: #363636;
+        font-size: 2rem;
+        font-weight: 600;
+        line-height: 1.125;
+    }
+    
+
+
+  
