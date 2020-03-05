@@ -1,12 +1,21 @@
 class BookingsController < ApplicationController
 
-    def index 
-        @bookings = Booking.all
+    def index
+        @bookings = @user.get_user_booking
+        @performances = Performance.all
+        @shows = ApiHelper::Api.events_api
+        @venues = ApiHelper::Api.venue_api
+
     end 
 
     def show 
         @booking = Booking.find(params[:id])
-    end 
+        @performance = Performance.find(@booking[:performance_id])
+        @shows = ApiHelper::Api.events_api
+        @show = @shows.find{|show| show['EventId'] == @performance["event_id"]}
+        @venues = ApiHelper::Api.venue_api
+        @venue = @venues.find{|venue| venue['VenueId'] == @show['VenueId']}
+    end
 
     def new
         @booking = Booking.new
