@@ -1,9 +1,5 @@
 <h1>Sign Up</h1>
 
-<div align='right'>
-<%= link_to(controller: 'sessions', action: 'new') { 'Login' } %>
-</div>
-
 <%flash.each do |name, msg|%>
 <div class: alert alert-<%= name%>> <%=msg%> </div>
 <%end%>
