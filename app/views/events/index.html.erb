@@ -1,14 +1,14 @@
-
-
 <h3>Most featured shows:</h3>
-    <% 100.times do |i| %>
+<% @shows.each do |show| %>
     <div class="row"></div>
         <div class="column">
-            <h3><%= @shows[i]['Name']%><br></h3>
-            <%= link_to image_tag("#{@shows[i]['SmallImageUrl']}"), event_path(@shows[i]['EventId']) %>
+            <h3><%= show['Name']%><br></h3>
+            <%= link_to image_tag("#{show['SmallImageUrl']}"), event_path(show['EventId']) %> 
         </div>
+       
     </div>
-    <% end %>
-    
+<% end %>
+
+   
    
 
