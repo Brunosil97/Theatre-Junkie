@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_03_02_164340) do
+ActiveRecord::Schema.define(version: 2020_03_02_163749) do
 
   create_table "bookings", force: :cascade do |t|
     t.integer "total_price"
@@ -28,11 +28,8 @@ ActiveRecord::Schema.define(version: 2020_03_02_164340) do
     t.integer "stalls_available"
     t.integer "lower_available"
     t.integer "upper_available"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "sessions", force: :cascade do |t|
+    t.integer "performance_id"
+    t.integer "min_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

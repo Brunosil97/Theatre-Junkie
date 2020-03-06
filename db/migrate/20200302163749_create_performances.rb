@@ -6,7 +6,8 @@ class CreatePerformances < ActiveRecord::Migration[6.0]
       t.integer :stalls_available
       t.integer :lower_available
       t.integer :upper_available
-
+      t.integer :performance_id
+      t.integer :min_price
       t.timestamps
     end
   end

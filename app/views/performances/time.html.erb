@@ -1,0 +1,11 @@
+<%=form_tag'/performances/time' do %>
+<%= hidden_field_tag "performance[show_id]", params[:show_id] %>
+<%= hidden_field_tag "performance[date]", params[:date] %>
+<select name="performance[time]">
+    <%  @performance_time.each do |time| %>
+        <option value="<%= time.to_s %>"><%= time.to_s %></option>
+    <% end %>
+</select>
+<%= submit_tag "next" %>
+
+<% end %>

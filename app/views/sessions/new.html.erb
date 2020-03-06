@@ -1,18 +1,22 @@
-<h1>Login</h1>
-<div align = 'right'>
-<%= link_to(controller: 'users', action: 'new') { 'sign up' } %>
-</div>
 
 <%flash.each do |name, msg|%>
 <div class: alert alert-<%= name%>> <%=msg%> </div>
 <%end%>
 
 <%= form_for @user, url: login_path, method: :post do |f| %>
-<%= f.label :email %>
-<%= f.email_field :email %>
+<div class="imgcontainer">
+    <%= f.label :email %>:<br>
+    <%= f.email_field :email %><br>
 
-<%= f.label :password %>
-<%= f.password_field :password %>
-
-<%= f.submit "log in", class: "btn btn-primary"%>
+    <%= f.label :password %>:<br>
+    <%= f.password_field :password %><br>
+    <%= f.submit "log in", class: "btn btn-primary"%>
+   
+</div>
 <% end %>
+
+<div align = 'right'>
+    <button type="button" class="btn btn-outline-success my-2 my-sm-0"><%= link_to(controller: 'users', action: 'new') { 'sign up' } %></button>
+</div>
+
+</html>
