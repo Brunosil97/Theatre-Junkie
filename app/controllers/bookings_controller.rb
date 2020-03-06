@@ -1,7 +1,8 @@
 class BookingsController < ApplicationController
 
     def index
-        @bookings = @user.get_user_booking
+        @booking_future = @user.get_future_show
+        @booking_old = @user.get_previous_show
         @performances = Performance.all
         @shows = ApiHelper::Api.events_api
         @venues = ApiHelper::Api.venue_api
@@ -19,6 +20,7 @@ class BookingsController < ApplicationController
 
     def new
         @booking = Booking.new
+        @performance = Performance.find(params[:performance_id].to_i)
     end 
 
     def create 
@@ -40,6 +42,8 @@ class BookingsController < ApplicationController
 
     def destroy
         @booking = Booking.find(params[:id])
+        @performance = Performance.find(@booking[:performance_id])
+        @performance.booking_delete(@booking[:seating_type], @booking[:num_of_tickets])
         @booking.destroy
         flash[:notice] = "Booking deleted."
         redirect_to bookings_path

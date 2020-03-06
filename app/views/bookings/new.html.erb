@@ -16,3 +16,10 @@
     
     <%= f.submit %>
 <% end %>
+
+<hr>
+<h4>Pricing for the tickets: </h4>
+<li>Upper Seating Ticket Price: £<%= @performance[:min_price]%> </li>
+<li>Lower Seating Ticket Price: £<%= @performance[:min_price]*2%> </li>
+<li>Stall Seating Ticket Price: £<%= @performance[:min_price]*3%> </li>
+ <button class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Cancel Booking", events_path%></button>

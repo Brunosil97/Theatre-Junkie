@@ -6,11 +6,11 @@ class Booking < ApplicationRecord
     def get_price(seat_type, performance, seats)
         case seat_type
         when "stalls"
-            self.total_price = performance[:min_price] * seats
+            self.total_price = performance[:min_price] * seats * 3
         when "lower"
             self[:total_price] = performance[:min_price] * seats * 2
         when "upper"
-            self[:total_price] = performance[:min_price] * seats * 3
+            self[:total_price] = performance[:min_price] * seats
         end
         self.save
     end

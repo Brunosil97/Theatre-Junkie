@@ -10,4 +10,12 @@ class User < ApplicationRecord
     def get_user_booking
         self.bookings
     end
+
+    def get_future_show
+        get_user_booking.select{|book| Performance.find_by(id: book[:performance_id])[:date_time] > DateTime.now}
+    end
+
+    def get_previous_show
+        get_user_booking.select{|book| Performance.find_by(id: book[:performance_id])[:date_time] < DateTime.now}
+    end
 end

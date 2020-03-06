@@ -1,6 +1,4 @@
-<%= @performances[0] %>
-
-
+<h1>Select a Date</h1>
 <%=form_tag'/performances/date' do %>
 <%= hidden_field_tag "performance[show_id]", params[:data] %>
 <select name="performance[date]">
@@ -11,3 +9,4 @@
 <%= submit_tag "next" %>
 
 <% end %>
+ <button class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Back",event_path(params[:data])%></button>

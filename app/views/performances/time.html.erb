@@ -1,3 +1,4 @@
+<h1>Select a Time</h1>
 <%=form_tag'/performances/time' do %>
 <%= hidden_field_tag "performance[show_id]", params[:show_id] %>
 <%= hidden_field_tag "performance[date]", params[:date] %>
@@ -7,5 +8,6 @@
     <% end %>
 </select>
 <%= submit_tag "next" %>
-
 <% end %>
+
+<button class="btn btn-outline-success my-2 my-sm-0"><%= link_to "Back", {controller: :performances, action: :date, :data => params[:show_id]} %></button>
