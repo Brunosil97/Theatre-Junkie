@@ -1,0 +1,9 @@
+<h3>Search Result</h3>  
+
+    <% @results.each do |result| %>  
+            <div class="column">
+                <h3><%= result['Name']%><br></h3>
+            <%= link_to image_tag("#{result['SmallImageUrl']}"), event_path(result['EventId']) %>
+            </div>
+       
+    <% end %>

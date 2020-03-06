@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get '/performances/time' => 'performances#time', as: "performance_time"
   post '/performances/time' => 'performances#time_create'
   post '/logout' => 'sessions#destroy'
+  get '/search' => 'pages#search', :as => 'search_page'
   resources :events
   resources :theatres
 end
