@@ -9,7 +9,7 @@ class PagesController < ApplicationController
           redirect_to events_path 
         else  
           @parameter = params[:search].downcase  
-          @results = @shows.select{|show| show['Name'].downcase == @parameter} 
+          @results = @shows.select{|show| show['Name'].downcase.include? @parameter.downcase} 
         end  
       end
 
