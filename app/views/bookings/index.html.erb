@@ -1,0 +1,6 @@
+<h1>Your Bookings: </h1>
+<%@bookings.map do |booking|%>
+<%performance = Performance.find(booking[:performance_id])%>
+<li>Your tickets for <%=link_to "#{@shows.find{|show| show['EventId'] == performance["event_id"]}["Name"]}", booking_path(booking)%> on the <%performance["date_time"].strftime("%d %b %Y")%> at <%= performance["date_time"].strftime("%H:%M")%></h1>
+</li>
+<%end%>

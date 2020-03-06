@@ -6,5 +6,8 @@ class User < ApplicationRecord
     validates :email, uniqueness: true
     validates :name, presence: true
 
-  
+
+    def get_user_booking
+        self.bookings
+    end
 end
