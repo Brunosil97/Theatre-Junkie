@@ -27,9 +27,9 @@ def booking_delete(seating_type, num_of_tickets)
     when "stalls"
         self[:stalls_available] += num_of_tickets
     when "lower"
-        self[:lower_available] = performance[:min_price] * seats * 2
+        self[:lower_available] += num_of_tickets
     when "upper"
-        self[:upper_available] = performance[:min_price] * seats
+        self[:upper_available] += num_of_tickets
     end
     self.save
 end

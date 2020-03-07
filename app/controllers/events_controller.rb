@@ -2,8 +2,8 @@ require 'will_paginate/array'
 class EventsController < ApplicationController
 
     def index 
-        @shows = ApiHelper::Api.events_api
-        @shows.paginate(page: params[:page], per_page: 10)
+        @shows = ApiHelper::Api.events_api.paginate(page: params[:page], per_page: 9)
+
 
     end 
 
