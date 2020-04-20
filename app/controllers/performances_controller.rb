@@ -6,7 +6,6 @@ class PerformancesController < ApplicationController
     end
 
     def date_create
-        # byebug
         redirect_to(performance_time_path({:date => params[:performance][:date], :show_id => params[:performance][:show_id]}))
     end
 
