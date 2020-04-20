@@ -21,5 +21,17 @@ end
 def self.find_time(performances, date, time)
     find_date(performances, date).find{|perform| perform["PerformanceDate"].to_datetime.strftime("%H:%M").to_s == time}
 end
+
+def booking_delete(seating_type, num_of_tickets)
+    case seating_type
+    when "stalls"
+        self[:stalls_available] -= num_of_tickets
+    when "lower"
+        self[:lower_available] -= num_of_tickets
+    when "upper"
+        self[:upper_available] -= num_of_tickets
+    end
+    self.save
+end
     
 end

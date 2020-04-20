@@ -1,5 +1,6 @@
 class SessionsController < ApplicationController
     skip_before_action :authorize_user
+    layout "login_signup"
     
     def new
         @user = User.new

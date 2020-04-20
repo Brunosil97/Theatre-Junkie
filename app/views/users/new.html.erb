@@ -1,9 +1,5 @@
 <h1>Sign Up</h1>
 
-<div align='right'>
-<%= link_to(controller: 'sessions', action: 'new') { 'Login' } %>
-</div>
-
 <%flash.each do |name, msg|%>
 <div class: alert alert-<%= name%>> <%=msg%> </div>
 <%end%>
@@ -21,5 +17,9 @@
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %> <div>
 
-  <%= f.submit "create" %>
+  <%= f.submit "Finish" , class: "btn btn-primary" %>
+
 <% end %>
+<div align = 'right'>
+  <button type="button" class="btn btn-outline-success my-2 my-sm-0"><%= link_to(controller: 'sessions', action: 'new') { 'Already have an account? Go back to login' } %></button>
+</div>

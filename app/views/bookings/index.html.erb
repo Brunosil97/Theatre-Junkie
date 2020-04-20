@@ -1,0 +1,19 @@
+<h1>Your Tickets: </h1>
+
+<%flash.each do |name, msg|%>
+<div class: alert alert-<%= name%>> <%=msg%> </div>
+<%end%>
+
+<h2>Your Current Tickets: </h2>
+<%@booking_future.map do |booking|%>
+<%performance = Performance.find(booking[:performance_id])%>
+<li>Your tickets for <%=link_to "#{@shows.find{|show| show['EventId'] == performance["event_id"]}["Name"]}", booking_path(booking)%> on the <%=performance["date_time"].strftime("%d %b %Y")%> at <%= performance["date_time"].strftime("%H:%M")%> <%=link_to "[X]", "/bookings/#{booking[:id]}", method: :delete%>
+</li>
+<%end%>
+
+<h2>Previous Tickets: </h2>
+<% @booking_old.map do |booking|%>
+<%performance = Performance.find(booking[:performance_id])%>
+<li>Your tickets for <%=link_to "#{@shows.find{|show| show['EventId'] == performance["event_id"]}["Name"]}", booking_path(booking)%> on the <%=performance["date_time"].strftime("%d %b %Y")%> at <%= performance["date_time"].strftime("%H:%M")%>
+</li>
+<%end%>

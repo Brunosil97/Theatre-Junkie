@@ -3,8 +3,4 @@ require "uri"
 require 'json'
 
 class Event  
-
-    
-    
-    
 end 

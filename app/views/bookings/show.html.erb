@@ -1,0 +1,6 @@
+<h1>You have booked tickets to see "<%=@show["Name"]%>"</h1>
+<p>Your tickets are for the <%= @performance["date_time"].strftime("%d %b %Y")%> at <%= @performance["date_time"].strftime("%H:%M")%> </p>
+<p>Num of tickets: <%=@booking["num_of_tickets"]%></p>
+<p>Your seating type is: <%=@booking["seating_type"]%></p>
+<p>You spent £<%=@booking["total_price"]%> on tickets</p>
+<p>It will be at the "<%=@venue["Name"]%>"</p>
