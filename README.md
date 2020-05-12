@@ -1,24 +1,21 @@
-# README
+# Theatre Junkie
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A booking system for theatre tickets
 
-Things you may want to cover:
+front-end code: [GitHub](https://github.com/Brunosil97/Theatre-Junkie)
 
-* Ruby version
+## Installation
 
-* System dependencies
+1. Clone this repository.
+2. Run bundle install in the terminal
+3. Run rails s to start up the app.
 
-* Configuration
+## Languages, Frameworks and APIs
 
-* Database creation
+Ruby, Rails, Pagination, Sqlite3
 
-* Database initialization
+## Contributors:
 
-* How to run the test suite
+Amy Franz: [GitHub](https://github.com/amyfranz)
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Bruno Silva: [GitHub](https://github.com/Brunosil97)
