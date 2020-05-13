@@ -21,6 +21,6 @@ class SessionsController < ApplicationController
         session.delete :user_id
         flash[:notice] = 'logged out successfully'
 
-        redirect_to '/login', method: :get
+        redirect_to '/', method: :get
     end
 end

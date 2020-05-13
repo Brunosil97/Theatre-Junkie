@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :bookings 
   # resources :performances 
-  get '/login' => 'sessions#new'
+  get '/' => 'sessions#new'
   post '/login' => 'sessions#create'
   post '/logout' => 'sessions#destroy'
   get '/performances/date' => 'performances#date'
