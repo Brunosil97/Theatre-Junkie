@@ -21,7 +21,7 @@ front-end code: [GitHub](https://github.com/Brunosil97/Theatre-Junkie)
 
 ## Languages, Frameworks and APIs
 
-Ruby, Rails, Pagination, Sqlite3
+Ruby, Rails, Pagination, postgresql, London Theatre Direct API
 
 ## Contributors:
 
